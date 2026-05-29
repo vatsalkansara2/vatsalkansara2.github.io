@@ -1,248 +1,331 @@
-<!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Phantom by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Story</title>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
-								</a>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/book.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-sunflower"></div>
+            <p class="loader-text">Preparing something special...</p>
+        </div>
+    </div>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+    <!-- Particle Overlay Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
-						</div>
-					</header>
+    <!-- Audio Toggle -->
+    <button id="audio-toggle" aria-label="Toggle music">
+        <svg class="audio-icon audio-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.08"/>
+        </svg>
+        <svg class="audio-icon audio-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+    </button>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"><div id="scroll-bar"></div></div>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-								<h1>This is PHANTOM, A New,Vfx and 3d Animation site<br />
-								Website designed by <a href="http://html5up.net">VATSAL</a>.</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
-							</header>
-							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h3>Autodesk 3ds Max</h3>
-										<div class="content">
-											<p>
-3D design software for modelling, animation and rendering. Bring characters and environments to life in less time with 3ds Max® 3D customisable, collaborative software. Get new, user-requested features and enhancements built for entertainment and design professionals.
-</p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Lorem</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Feugiat</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Tempus</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Aliquam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Veroeros</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic07.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ipsum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic08.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dolor</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style1">
-									<span class="image">
-										<img src="images/pic09.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Nullam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ultricies</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="images/pic11.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dictum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic12.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Pretium</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-							</section>
-						</div>
-					</div>
+    <!-- Main Scroll Container -->
+    <div id="scroll-container">
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="field half first">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="field half">
-										<input type="email" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="field">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="special" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+        <!-- ============ HERO SECTION ============ -->
+        <section class="section hero-section" id="hero">
+            <div class="hero-content">
+                <div class="hero-glow"></div>
+                <div class="hero-sunflower-art"></div>
+                <h1 class="hero-title">Our Story</h1>
+                <p class="hero-subtitle">A journey of <span class="highlight">730 days</span> together</p>
+                <p class="hero-name">For Dharuuuu</p>
+                <div class="scroll-hint">
+                    <span>scroll to begin</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </section>
 
-			</div>
+        <!-- ============ BOOK SECTION (PINNED) ============ -->
+        <section class="section book-section" id="book-viewport">
+            <div class="book-container">
+                <div class="book" id="book-3d">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+                    <!-- Front Cover -->
+                    <div class="page-group cover-group" data-page="cover">
+                        <div class="page cover-front">
+                            <div class="cover-content">
+                                <div class="cover-sunflower-art"></div>
+                                <h2 class="cover-title">Us</h2>
+                                <p class="cover-date">2024 — forever</p>
+                                <div class="cover-ornament"></div>
+                            </div>
+                        </div>
+                        <div class="page cover-front-back">
+                            <p class="page-dedication">"Every love story is beautiful, but ours is my favorite."</p>
+                        </div>
+                    </div>
 
-	</body>
+                    <!-- Page 1: First Date -->
+                    <div class="page-group" data-page="1">
+                        <div class="page page-front">
+                            <div class="page-content memory-page playful">
+                                <span class="page-number">01</span>
+                                <h3 class="memory-title">Where It All Began</h3>
+                                <div class="photo-frame tilt-right">
+                                    <img src="images/5.jpg" alt="Our first date" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Ek table, thodi awkward silence, ane pachhi vaato no end j nahi. Aapdi first date @ Table tales — Tya thi apdi tale start thai..</p>
+                                <div class="page-doodle doodle-stars"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 2: Temple Visit -->
+                    <div class="page-group" data-page="2">
+                        <div class="page page-front">
+                            <div class="page-content memory-page playful">
+                                <span class="page-number">02</span>
+                                <h3 class="memory-title">Blessed Together</h3>
+                                <div class="photo-frame tilt-left">
+                                    <img src="images/8.jpg" alt="Temple visit" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Aapdi first mandir visit sathe. Tari sathe ubho'to tyare kharekhara koi wish nahi maangi — because je joiye te toh baaju ma j hati.</p>
+                                <div class="page-doodle doodle-wave"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 3: First Navratri -->
+                    <div class="page-group" data-page="3">
+                        <div class="page page-front">
+                            <div class="page-content memory-page playful">
+                                <span class="page-number">03</span>
+                                <h3 class="memory-title">Our First Navratri</h3>
+                                <div class="photo-frame straight">
+                                    <img src="images/1.jpg" alt="Navratri together" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Lights, Garba, ane tu aa pink lehenga ma. Aapdu first Navratri sathe — ane pachhi toh koi pan festival tara vagar adhu lage che.</p>
+                                <div class="page-doodle doodle-hearts"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 4: First Kia Ride -->
+                    <div class="page-group" data-page="4">
+                        <div class="page page-front">
+                            <div class="page-content memory-page playful">
+                                <span class="page-number">04</span>
+                                <h3 class="memory-title">New Driver, New Thrill</h3>
+                                <div class="photo-frame tilt-right">
+                                    <img src="images/2.jpg" alt="Her first drive" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">First time jyare te Kia chalavi. To bi honest mane thodi bik to lagi ti. Pan tu bhai drive kari lidhi — proud of you Dharuuuu.</p>
+                                <div class="page-doodle doodle-sun"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 5: First Long Drive -->
+                    <div class="page-group" data-page="5">
+                        <div class="page page-front">
+                            <div class="page-content memory-page transition">
+                                <span class="page-number">05</span>
+                                <h3 class="memory-title">Open Road, Open Hearts</h3>
+                                <div class="photo-frame tilt-left">
+                                    <img src="images/6.jpg" alt="Long drive together" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Aapdi first long drive. Kya javanu? Koi plan nahi. Bas road, music full volume, and vacche vacche tari kia ma ungh 😅. Perfect day.</p>
+                                <div class="page-doodle doodle-infinity"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 6: Elevator Selfie -->
+                    <div class="page-group" data-page="6">
+                        <div class="page page-front">
+                            <div class="page-content memory-page deep">
+                                <span class="page-number">06</span>
+                                <h3 class="memory-title">My Favourite Frame</h3>
+                                <div class="photo-frame straight">
+                                    <img src="images/3.webp" alt="Elevator selfie" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Koi fancy jagya nahi, koi setup nahi — bas lift, mirror, ane aapde. Maru favourite photo. Because aa j real aapde chiye.</p>
+                                <div class="page-doodle doodle-hearts"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 7: Goofy Selfie -->
+                    <div class="page-group" data-page="7">
+                        <div class="page page-front">
+                            <div class="page-content memory-page deep">
+                                <span class="page-number">07</span>
+                                <h3 class="memory-title">Us Being Us</h3>
+                                <div class="photo-frame tilt-right">
+                                    <img src="images/4.jpg" alt="Goofy together" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Aa motu modhnu, aa silly faces — aapde bahar koi ne na dekhadu maru aa version. Pan honestly? Aa j mane sabauthi vadhare gamey che. Never change.</p>
+                                <div class="page-doodle doodle-sun"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 8: Sunflower Gift -->
+                    <div class="page-group" data-page="8">
+                        <div class="page page-front">
+                            <div class="page-content memory-page deep">
+                                <span class="page-number">08</span>
+                                <h3 class="memory-title">Your Sunflower</h3>
+                                <div class="photo-frame tilt-left">
+                                    <img src="images/7.jpg" alt="Sunflower gift" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Aa raat e tane pehlu sunflower aapyu. Bas ek flower nahi — aa maro vaaydo hato ke hu tane samjhu chu, tane januch hu, ane hamesha try karishne taru sunshine banva.</p>
+                                <div class="page-doodle doodle-plant"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 8: Sunflower Gift -->
+                    <div class="page-group" data-page="8">
+                        <div class="page page-front">
+                            <div class="page-content memory-page deep">
+                                <span class="page-number">08</span>
+                                <h3 class="memory-title">Your Sunflower</h3>
+                                <div class="photo-frame tilt-left">
+                                    <img src="images/7.jpg" alt="Sunflower gift" class="memory-photo">
+                                    <div class="photo-tape"></div>
+                                </div>
+                                <p class="memory-caption">Aa raat e tane pehlu sunflower aapyu. Bas ek flower nahi — aa maro vaaydo hato ke hu tane samjhu chu, tane januch hu, ane hamesha try karishne taru sunshine banva.</p>
+                                <div class="page-doodle doodle-plant"></div>
+                            </div>
+                        </div>
+                        <div class="page page-back">
+                            <div class="page-content page-decoration">
+                                <div class="sunflower-pattern golden"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ LETTER SECTION (SEPARATE FROM BOOK) ============ -->
+        <section class="section letter-section" id="letter-section">
+            <div class="letter-container" id="letter-container">
+                <div class="letter-header">
+                    <h2>A Letter For You</h2>
+                </div>
+                <div class="letter-paper">
+                    <div class="letter-shadow"></div>
+                    <p class="letter-greeting">My dearest Dharuuuu,</p>
+                    <p class="letter-body">Two years ago, you walked into my life and turned everything golden — like the sunflowers you love so much.</p>
+                    <p class="letter-body">I know we've been through rough patches. I know some days I wasn't the partner you deserved. But every morning I wake up grateful that you're still the first person I want to talk to.</p>
+                    <p class="letter-body">You've taught me what it means to love someone — not just in the easy moments, but through the hard ones too. And I'm not done learning.</p>
+                    <p class="letter-body">I don't want to just remember our story. I want to keep writing it — with you, always.</p>
+                    <p class="letter-closing">Forever yours,</p>
+                    <p class="letter-signature">Bhuro</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ THE ASK (FINALE) ============ -->
+        <section class="section ask-section" id="ask-section">
+            <div class="ask-container">
+                <div class="bloom-sunflower" id="bloom-sunflower">
+                    <div class="bloom-center"></div>
+                    <div class="bloom-petals" id="bloom-petals"></div>
+                </div>
+                <h2 class="ask-text" id="ask-text">Will you go on a first date with me... again?</h2>
+                <button class="yes-btn" id="yes-btn">Yes!</button>
+            </div>
+        </section>
+
+        <!-- ============ CELEBRATION (After Yes) ============ -->
+        <section class="section celebration-section" id="celebration" style="display:none;">
+            <div class="celebration-content">
+                <h2 class="celebration-title">Here's to Chapter Two</h2>
+                <p class="celebration-text">Same us. Fresh start. Infinite possibilities.</p>
+                <p class="celebration-emoji">🌻</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- CDN Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/book.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+</body>
 </html>
