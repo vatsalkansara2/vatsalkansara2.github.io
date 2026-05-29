@@ -98,9 +98,28 @@ body {
 
 .loader-text {
     font-family: var(--font-handwritten);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--amber);
     opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.enter-btn {
+    font-family: var(--font-handwritten);
+    font-size: 1.2rem;
+    padding: 12px 36px;
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--gold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: btnPulse 2s ease-in-out infinite;
+}
+
+.enter-btn:hover {
+    background: var(--gold);
+    color: white;
 }
 
 /* ============ AUDIO TOGGLE ============ */

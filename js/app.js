@@ -9,21 +9,27 @@ const DeviceProfile = (() => {
 
 const App = (() => {
     function init() {
+        const enterBtn = document.getElementById('enter-btn');
+        if (enterBtn) {
+            enterBtn.addEventListener('click', startExperience);
+        }
+    }
+
+    function startExperience() {
+        // Start music immediately on this click (user gesture)
+        AudioManager.init();
+
+        // Hide loader
+        const loader = document.getElementById('loader');
+        if (loader) loader.classList.add('hidden');
+
+        // Init everything
         BookManager.init();
         createBloomPetals();
         ParticleSystem.init();
         ParticleSystem.start();
         ScrollController.init();
-        AudioManager.init();
         setupYesButton();
-        hideLoader();
-    }
-
-    function hideLoader() {
-        setTimeout(() => {
-            const loader = document.getElementById('loader');
-            if (loader) loader.classList.add('hidden');
-        }, 1500);
     }
 
     function createBloomPetals() {

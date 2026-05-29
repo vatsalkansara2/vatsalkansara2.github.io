@@ -1,71 +1,34 @@
 const AudioManager = (() => {
-    let bgMusic = null;
+    let audio = null;
     let isPlaying = false;
-    let isInitialized = false;
 
     function init() {
+        audio = document.createElement('audio');
+        audio.src = 'audio/song.mp3';
+        audio.loop = true;
+        audio.volume = 0.3;
+        document.body.appendChild(audio);
+
+        // Play immediately — this is called inside a click handler so browser allows it
+        audio.play();
+        isPlaying = true;
+        document.body.classList.add('music-playing');
+
         const toggle = document.getElementById('audio-toggle');
-        if (!toggle) return;
-
-        toggle.addEventListener('click', toggleMusic);
-
-        document.addEventListener('scroll', startOnInteraction, { once: true });
-        document.addEventListener('click', startOnInteraction, { once: true });
-    }
-
-    function loadMusic() {
-        if (isInitialized) return;
-        isInitialized = true;
-
-        bgMusic = new Howl({
-            src: ['audio/song.mp3'],
-            loop: true,
-            volume: 0,
-            html5: true,
-            onloaderror: () => {
-                console.log('No audio file found — music disabled');
-                isInitialized = false;
-            }
-        });
-    }
-
-    function startOnInteraction() {
-        loadMusic();
-        if (bgMusic && !isPlaying) {
-            playMusic();
-        }
+        if (toggle) toggle.addEventListener('click', toggleMusic);
     }
 
     function toggleMusic() {
-        if (!isInitialized) loadMusic();
-
         if (isPlaying) {
-            pauseMusic();
+            audio.pause();
+            isPlaying = false;
+            document.body.classList.remove('music-playing');
         } else {
-            playMusic();
+            audio.play();
+            isPlaying = true;
+            document.body.classList.add('music-playing');
         }
     }
 
-    function playMusic() {
-        if (!bgMusic) return;
-        bgMusic.play();
-        bgMusic.fade(0, 0.3, 1000);
-        isPlaying = true;
-        document.body.classList.add('music-playing');
-    }
-
-    function pauseMusic() {
-        if (!bgMusic) return;
-        bgMusic.fade(bgMusic.volume(), 0, 500);
-        setTimeout(() => bgMusic.pause(), 500);
-        isPlaying = false;
-        document.body.classList.remove('music-playing');
-    }
-
-    function setVolume(vol) {
-        if (!bgMusic || !isPlaying) return;
-        bgMusic.fade(bgMusic.volume(), vol, 800);
-    }
-
-    return { init, toggleMusic, setVolume, playMusic, pauseMusic };
+    return { init, toggleMusic };
 })();
